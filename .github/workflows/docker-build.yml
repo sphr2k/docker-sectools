@@ -28,14 +28,14 @@ jobs:
         env: 
           SHORT_SHA: ${{ steps.short-sha.outputs.sha }}
           
-      - name: Print SHA
+      - name: Print SHORT_SHA
         run: |
           echo $SHORT_SHA
 
       - uses: mr-smithers-excellent/docker-build-push@v5
         with:
           image: janwer/sectools
-          tags: latest, ${SHORT_SHA}
+          tags: latest, $SHORT_SHA
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
