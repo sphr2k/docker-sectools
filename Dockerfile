@@ -17,3 +17,5 @@ RUN git clone --depth 1 https://github.com/drwetter/testssl.sh.git /opt/testssl 
  && ln -s /opt/testssl/testssl.sh /usr/local/bin/tetssl
 
 RUN pip3 install ssh-audit
+
+CMD /usr/bin/pwsh
